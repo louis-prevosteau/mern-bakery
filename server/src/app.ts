@@ -1,5 +1,11 @@
+import cookieParser from 'cookie-parser';
+import cors from 'cors'
 import express, { Application } from "express";
-import { PORT } from "./config/default";
+import helmet from 'helmet';
+import { connect, set } from "mongoose";
+import morgan from 'morgan';
+import { MONGO_URL, PORT } from "./config/default";
+import logger from "./utils/logger";
 
 export default class App {
     
@@ -8,10 +14,28 @@ export default class App {
 
     constructor() {
         this.app = express();
-        this.port = PORT || 8080
+        this.port = PORT || 8080;
+        this.connectDatabase();
+        this.initMiddleware();
+    }
+
+    connectDatabase(): void {
+        set('strictQuery', true);
+        connect(`${MONGO_URL}`)
+        .then(() => logger.info('MongoDB: connected'))
+        .catch((err) => logger.error(`MongoDB: ${err}`))
+    }
+
+    initMiddleware(): void {
+        this.app.use(cors());
+        this.app.use(cookieParser());
+        this.app.use(express.json());
+        this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(morgan('dev'));
+        this.app.use(helmet());
     }
 
     listen(): void {
-        this.app.listen(this.port, () => console.log(`Express: listening on http://localhost:${this.port}`));
+        this.app.listen(this.port, () => logger.info(`Express: listening on http://localhost:${this.port}`));
     }
 };
