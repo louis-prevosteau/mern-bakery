@@ -14,7 +14,8 @@ const ProductSchema = new Schema(
         },
         category: {
             type: Schema.Types.ObjectId,
-            ref: 'category'
+            ref: 'category',
+            required: true
         }
     }
 );
