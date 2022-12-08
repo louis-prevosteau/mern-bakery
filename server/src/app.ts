@@ -4,35 +4,44 @@ import express, { Application } from "express";
 import helmet from 'helmet';
 import { connect, set } from "mongoose";
 import morgan from 'morgan';
+import passport from 'passport';
 import { MONGO_URL, PORT } from "./config/default";
 import logger from "./utils/logger";
+import routes from './routes';
+import initPassport from './config/passport';
 
 export default class App {
     
-    public app: Application;
-    public port: string | number;
+    private app: Application;
+    private port: string | number;
 
     constructor() {
         this.app = express();
         this.port = PORT || 8080;
         this.connectDatabase();
-        this.initMiddleware();
+        this.initMiddlewares();
+        this.initRoutes();
     }
 
-    connectDatabase(): void {
+    private connectDatabase(): void {
         set('strictQuery', true);
         connect(`${MONGO_URL}`)
         .then(() => logger.info('MongoDB: connected'))
         .catch((err) => logger.error(`MongoDB: ${err}`))
     }
 
-    initMiddleware(): void {
+    private initMiddlewares(): void {
         this.app.use(cors());
         this.app.use(cookieParser());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(morgan('dev'));
         this.app.use(helmet());
+        initPassport(this.app);
+    }
+
+    private initRoutes() {
+        this.app.use('/api', routes);
     }
 
     listen(): void {
