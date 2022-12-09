@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import fs from 'fs';
 import { ProductService, UserService } from "../services";
 
 const productService = new ProductService();
@@ -9,7 +10,7 @@ export class ProductController {
     async getProducts(req: Request, res: Response) {
         const { category } = req.query;
         try {
-            let products;
+            let products = null;
             if (category) products = await productService.getAll({ category }).populate('category');
             else products = await productService.getAll().populate('category');
         } catch (error) {
@@ -28,8 +29,7 @@ export class ProductController {
     }
 
     async createProduct(req: Request, res: Response) {
-        const { name, price, category } = req.body;
-        const image = req.file?.filename;
+        const { name, image, price, category } = req.body;
         try {
             if (!name || !category) return res.status(400).json({ message: 'Veuillez remplir ces champs' });
             const product = await productService.create(
@@ -49,13 +49,13 @@ export class ProductController {
 
     async updateProduct(req: Request, res: Response) {
         const { id } = req.params;
-        const { name, price, category } = req.body;
+        const { name, image, price, category } = req.body;
         try {
-            if (!name || !category) return res.status(400).json({ message: 'Veuillez remplir ces champs' });
             const product = await productService.update(
                 { _id: id },
                 {
                     name,
+                    image,
                     price,
                     category
                 }
@@ -70,6 +70,7 @@ export class ProductController {
         const { id } = req.params;
         try {
             const product = await productService.delete({ _id: id });
+            if (product?.image) fs.rm(`../client/public/uploads/products/${product?.image}`, (err) => {return})
             res.status(200).json(product);
         } catch (error) {
             res.status(500).json(error);
