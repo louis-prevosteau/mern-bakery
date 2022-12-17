@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Authentication from './pages/Authentication';
+import NotFound from './pages/NotFound';
+import Products from './pages/Products';
+import Profile from './pages/Profile';
+import './utils/i18n';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Products/>}/>
+        <Route caseSensitive path='/auth' element={<Authentication/>}/>
+        <Route caseSensitive path='/products' element={<Products/>}/>
+        <Route caseSensitive path='/products/:id' element={<Products/>}/>
+        <Route caseSensitive path='/profile' element={<Profile/>}/>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

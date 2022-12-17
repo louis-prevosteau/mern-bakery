@@ -1,0 +1,6 @@
+{
+    "notFound": {
+        "pageNotExist": "Cette page n'existe pas",
+        "goBack": "Retourner à l'accueil"
+    }
+}
