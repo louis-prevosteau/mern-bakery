@@ -1,7 +1,7 @@
 import { GET_PROFILE } from "../../utils/actionTypes";
-import { Action } from "../../utils/interfaces";
+import { Action, User } from "../../utils/interfaces";
 
-export const profileReducer = (state = null, action: Action) => {
+export const profileReducer = (state: User = {}, action: Action) => {
     switch (action.type) {
         case GET_PROFILE:
             return action.payload;

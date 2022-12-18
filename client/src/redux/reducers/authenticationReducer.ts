@@ -1,20 +1,14 @@
 import { AUTH, LOGOUT } from "../../utils/actionTypes";
-import { Action } from "../../utils/interfaces";
+import { Action, User } from "../../utils/interfaces";
 
-export const authenticationReducer = (state = { profile: null }, action: Action) => {
+export const authenticationReducer = (state: User = {}, action: Action) => {
     switch (action.type) {
         case AUTH:
             localStorage.setItem('profile', JSON.stringify({ ...action.payload }));
-            return {
-                ...state,
-                profile: action.payload.user,
-            };
+            return action.payload.user;
         case LOGOUT:
             localStorage.clear();
-            return {
-                ...state,
-                profile: null
-            };
+            return null;
         default:
             return state;
     }

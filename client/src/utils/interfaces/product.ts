@@ -3,10 +3,10 @@ import { User } from "./user";
 
 export interface Product {
     _id?: any;
-    name: string;
+    name?: string;
     image?: string;
     price?: number;
-    category: Category;
+    category?: Category;
     likes?: User[];
     createdAt?: string;
     updatedAt?: string;

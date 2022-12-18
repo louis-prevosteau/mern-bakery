@@ -1,4 +1,12 @@
 {
+    "main": {},
+    "categories": {
+        "update": {
+            "title": "Modifier {{category}}",
+            "name": "Nom",
+            "submit": "Modifier"
+        }
+    },
     "notFound": {
         "pageNotExist": "Cette page n'existe pas",
         "goBack": "Retourner à l'accueil"

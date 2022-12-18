@@ -6,10 +6,10 @@ import { profileReducer } from './userReducer';
 
 export default combineReducers(
     {
-        authenticationReducer,
-        categoriesReducer,
-        productsReducer,
-        productReducer,
-        profileReducer
+        auth: authenticationReducer,
+        categories: categoriesReducer,
+        products: productsReducer,
+        product: productReducer,
+        profile: profileReducer
     }
 );

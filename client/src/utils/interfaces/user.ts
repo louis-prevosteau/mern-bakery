@@ -2,8 +2,8 @@ import { Product } from "./product";
 
 export interface User {
     _id?: any;
-    username: string;
-    email: string;
+    username?: string;
+    email?: string;
     role?: string;
     likes?: Product[];
     createdAt?: string;

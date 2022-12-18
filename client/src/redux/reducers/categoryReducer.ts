@@ -1,7 +1,7 @@
 import { CREATE_CATEGORY, DELETE_CATEGORY, GET_CATEGORIES, UPDATE_CATEGORY } from '../../utils/actionTypes';
 import { Action, Category } from '../../utils/interfaces';
 
-export const categoriesReducer = (state: Category[] = [], action: Action) => {
+export const categoriesReducer = (state: Category[] = [], action: Action): Category[] => {
     switch (action.type) {
         case GET_CATEGORIES:
             return action.payload;
