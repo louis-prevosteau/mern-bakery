@@ -1,5 +1,11 @@
 {
-    "main": {},
+    "main": {
+        "menu": {
+            "products": "Nos Produits",
+            "addresses": "Nos Adresses"
+        },
+        "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/mern-bakery"
+    },
     "categories": {
         "update": {
             "title": "Modifier {{category}}",
