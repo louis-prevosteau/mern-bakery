@@ -21,8 +21,7 @@ const UpdateCategoryModal = ({ category }: { category: Category }) => {
 
     const onClose = () => setState({ ...state, open: false });
 
-    const onSubmit = (e: any) => {
-        e.preventDefault();
+    const onSubmit = () => {
         dispatch(updateCategory(state.category));
     };
 

@@ -14,3 +14,8 @@ export const DELETE_CATEGORY = 'DELETE_CATEGORY';
 
 export const GET_PROFILE = 'GET_PROFILE';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+
+export const GET_BAKERIES = 'GET_BAKERIES';
+export const CREATE_BAKERY = 'CREATE_BAKERY';
+export const UPDATE_BAKERY = 'UPDATE_BAKERY';
+export const DELETE_BAKERY = 'DELETE_BAKERY'

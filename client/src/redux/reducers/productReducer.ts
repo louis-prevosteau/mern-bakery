@@ -1,7 +1,7 @@
 import { CREATE_PRODUCT, DELETE_PRODUCT, GET_PRODUCT, GET_PRODUCTS, UPDATE_PRODUCT } from "../../utils/actionTypes";
 import { Action, Product } from "../../utils/interfaces";
 
-export const productsReducer = (state: Product[] = [], action: Action) => {
+export const productsReducer = (state: Product[] = [], action: Action): Product[] => {
     switch (action.type) {
         case GET_PRODUCTS:
             return action.payload;
@@ -16,7 +16,7 @@ export const productsReducer = (state: Product[] = [], action: Action) => {
     }
 };
 
-export const productReducer = (state: Product = {}, action: Action) => {
+export const productReducer = (state: Product = {}, action: Action): Product => {
     switch (action.type) {
         case GET_PRODUCT:
             return action.payload;

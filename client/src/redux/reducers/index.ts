@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import { authenticationReducer } from './authenticationReducer';
+import { bakeriesReducer } from "./bakeryReducer";
 import { categoriesReducer } from './categoryReducer';
 import { productsReducer, productReducer } from './productReducer';
 import { profileReducer } from './userReducer';
@@ -7,6 +8,7 @@ import { profileReducer } from './userReducer';
 export default combineReducers(
     {
         auth: authenticationReducer,
+        bakeries: bakeriesReducer,
         categories: categoriesReducer,
         products: productsReducer,
         product: productReducer,
