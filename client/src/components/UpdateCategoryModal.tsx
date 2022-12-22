@@ -1,10 +1,10 @@
-import { IconButton, Dialog, DialogTitle, TextField, Button } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
+import { IconButton, Dialog, DialogTitle, TextField, Button, Grid } from '@mui/material';
 import React, { useState } from 'react';
 import { Category } from '../utils/interfaces';
 import { useDispatch } from 'react-redux';
 import { updateCategory } from '../redux/actions';
 import { useTranslation } from 'react-i18next';
+import { Edit } from '@mui/icons-material';
 
 const UpdateCategoryModal = ({ category }: { category: Category }) => {
 
@@ -21,20 +21,25 @@ const UpdateCategoryModal = ({ category }: { category: Category }) => {
 
     const onClose = () => setState({ ...state, open: false });
 
-    const onSubmit = () => {
+    const onSubmit = (e: any) => {
+        e.preventDefault();
         dispatch(updateCategory(state.category));
     };
 
     return (
         <div>
             <IconButton onClick={onOpen}>
-                <EditIcon/>
+                <Edit/>
             </IconButton>
             <Dialog open={state.open} onClose={onClose}>
                 <DialogTitle>{t('categories.update.title', { category: category.name })}</DialogTitle>
                 <form onSubmit={onSubmit}>
-                    <TextField label={t('categories.update.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
-                    <Button type='submit'>{t('categories.update.submit')}</Button>
+                    <Grid direction='column'>
+                        <Grid item>
+                            <TextField label={t('categories.update.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
+                        </Grid>
+                        <Button type='submit'>{t('categories.update.update')}</Button>
+                    </Grid>
                 </form>
             </Dialog>
         </div>

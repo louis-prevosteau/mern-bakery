@@ -8,11 +8,30 @@
         },
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/mern-bakery"
     },
+    "auth": {
+        "username": "Pseudo",
+        "email": "Email",
+        "password": "Mot de passe",
+        "login": "Se connecter",
+        "register": "S'inscrire"
+    },
     "categories": {
+        "title": "Catégories",
+        "create": {
+            "title": "Ajouter une catégorie",
+            "name": "Nom",
+            "add": "Ajouter"
+        },
         "update": {
             "title": "Modifier {{category}}",
             "name": "Nom",
-            "submit": "Modifier"
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{category}}",
+            "text": "Voulez-vous supprimer {{category}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
         }
     },
     "notFound": {

@@ -1,11 +1,9 @@
+import { AccountCircle, Login } from '@mui/icons-material';
 import { AppBar, Box, Button, Container, Toolbar, IconButton, Menu, MenuItem } from '@mui/material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import LoginIcon from '@mui/icons-material/Login';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { RootStore } from '../utils/types';
 import { logout } from '../redux/actions';
 
 const Header = () => {
@@ -15,7 +13,6 @@ const Header = () => {
             menuOpen: null
         }
     );
-    const { auth } = useSelector((state: RootStore) => state);
     const dispatch = useDispatch<any>();
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -53,14 +50,14 @@ const Header = () => {
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                        {!auth.profile ? (
+                        {!localStorage.getItem('profile') ? (
                             <IconButton onClick={() => navigate('/auth')}>
-                                <LoginIcon sx={{ color: 'white' }}/>
+                                <Login sx={{ color: 'white' }}/>
                             </IconButton>
                         ) : (
                             <div>
                                 <IconButton onClick={onOpenMenu} aria-controls="user-menu">
-                                    <AccountCircleIcon/>
+                                    <AccountCircle/>
                                 </IconButton>
                                 <Menu id='user-menu' anchorEl={state.menuOpen} keepMounted open={Boolean(state.menuOpen)} onClose={onCloseMenu}>
                                     <MenuItem onClick={() => navigate('/profile')}>{t('main.menu.profile')}</MenuItem>
