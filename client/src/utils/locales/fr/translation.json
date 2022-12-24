@@ -15,16 +15,42 @@
         "login": "Se connecter",
         "register": "S'inscrire"
     },
+    "products": {
+        "breads": "Nos Pains",
+        "title": "Nos Produits",
+        "fields": {
+            "name": "Nom",
+            "image": "Image",
+            "price": "Prix",
+            "category": "Catégorie"
+        },
+        "price": "{{price}} €",
+        "create": {
+            "title": "Ajouter un produit",
+            "add": "Ajouter"
+        },
+        "update": {
+            "title": "Modifier {{product}}",
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{product}}",
+            "text": "Voulez-vous supprimer {{product}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
+        }
+    },
     "categories": {
         "title": "Catégories",
+        "fields": {
+            "name": "Nom"
+        },
         "create": {
             "title": "Ajouter une catégorie",
-            "name": "Nom",
             "add": "Ajouter"
         },
         "update": {
             "title": "Modifier {{category}}",
-            "name": "Nom",
             "update": "Modifier"
         },
         "delete": {

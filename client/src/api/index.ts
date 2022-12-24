@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "../config/default";
-import { Bakery, Category, Product, ProductLike, User, UserLogin, UserRegister } from "../utils/interfaces";
+import { Bakery, Category, Product, User, UserLogin, UserRegister } from "../utils/interfaces";
 
 const api = axios.create(
     {
@@ -26,8 +26,6 @@ export const getProductsByCategory = (category: Category) => api.get(`product?ca
 export const getProduct = (id: any) => api.get(`product/${id}`);
 export const createProduct = (data: Product) => api.post('product', data);
 export const updateProduct = (id: any, data: Product) => api.put(`product/${id}`, data);
-export const likeProduct = (id: any, data: ProductLike) => api.put(`product/${id}/like`, data);
-export const unlikeProduct = (id: any, data: ProductLike) => api.put(`product/${id}/unlike`, data);
 export const deleteProduct = (id: any) => api.delete(`product/${id}`);
 
 export const getProfile = () => api.get('user/profile');

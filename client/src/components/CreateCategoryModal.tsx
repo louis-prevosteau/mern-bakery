@@ -37,7 +37,7 @@ const CreateCategoryModal = () => {
                 <form onSubmit={onSubmit}>
                     <Grid direction={'column'}>
                         <Grid item>
-                            <TextField label={t('categories.create.name')} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value } })}/>
+                            <TextField label={t('categories.fields.name')} type='text' onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value } })}/>
                         </Grid>
                         <Button type='submit'>{t('categories.create.add')}</Button>
                     </Grid>

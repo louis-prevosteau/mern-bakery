@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import * as api from '../../api';
 import { CREATE_PRODUCT, DELETE_PRODUCT, GET_PRODUCT, GET_PRODUCTS, UPDATE_PRODUCT } from "../../utils/actionTypes";
-import { Category, Product, ProductLike } from "../../utils/interfaces";
+import { Category, Product } from "../../utils/interfaces";
 
 export const getProducts = () => async (dispatch: Dispatch) => {
     const { data } = await api.getProducts();
@@ -45,26 +45,6 @@ export const createProduct = (productData: Product) => async (dispatch: Dispatch
 
 export const updateProduct = (productData: Product) => async (dispatch: Dispatch) => {
     const { data } = await api.updateProduct(productData._id, productData);
-    dispatch(
-        {
-            type: UPDATE_PRODUCT,
-            payload: data
-        }
-    );
-};
-
-export const likeProduct = (like: ProductLike,  product: Product) => async (dispatch: Dispatch) => {
-    const { data } = await api.likeProduct(product._id, like);
-    dispatch(
-        {
-            type: UPDATE_PRODUCT,
-            payload: data
-        }
-    );
-};
-
-export const unlikeProduct = (like: ProductLike, product: Product) => async (dispatch: Dispatch) => {
-    const { data } = await api.unlikeProduct(product._id, like);
     dispatch(
         {
             type: UPDATE_PRODUCT,

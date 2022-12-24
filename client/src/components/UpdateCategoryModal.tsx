@@ -36,7 +36,7 @@ const UpdateCategoryModal = ({ category }: { category: Category }) => {
                 <form onSubmit={onSubmit}>
                     <Grid direction='column'>
                         <Grid item>
-                            <TextField label={t('categories.update.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
+                            <TextField label={t('categories.fields.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
                         </Grid>
                         <Button type='submit'>{t('categories.update.update')}</Button>
                     </Grid>
