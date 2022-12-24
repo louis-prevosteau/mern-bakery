@@ -1,0 +1,21 @@
+export const AUTH = 'AUTH';
+export const LOGOUT = 'LOGOUT';
+
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const CREATE_PRODUCT = 'CREATE_PRODUCT';
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+
+export const GET_CATEGORIES = 'GET_CATEGORIES';
+export const CREATE_CATEGORY = 'CREATE_CATEGORY';
+export const UPDATE_CATEGORY = 'UPDATE_CATEGORY';
+export const DELETE_CATEGORY = 'DELETE_CATEGORY';
+
+export const GET_PROFILE = 'GET_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+
+export const GET_BAKERIES = 'GET_BAKERIES';
+export const CREATE_BAKERY = 'CREATE_BAKERY';
+export const UPDATE_BAKERY = 'UPDATE_BAKERY';
+export const DELETE_BAKERY = 'DELETE_BAKERY'

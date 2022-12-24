@@ -1,0 +1,67 @@
+{
+    "main": {
+        "menu": {
+            "products": "Nos Produits",
+            "addresses": "Nos Adresses",
+            "profile": "Mon Profil",
+            "logout": "Se déconnecter"
+        },
+        "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/mern-bakery"
+    },
+    "auth": {
+        "username": "Pseudo",
+        "email": "Email",
+        "password": "Mot de passe",
+        "login": "Se connecter",
+        "register": "S'inscrire"
+    },
+    "products": {
+        "breads": "Nos Pains",
+        "title": "Nos Produits",
+        "fields": {
+            "name": "Nom",
+            "image": "Image",
+            "price": "Prix",
+            "category": "Catégorie"
+        },
+        "price": "{{price}} €",
+        "create": {
+            "title": "Ajouter un produit",
+            "add": "Ajouter"
+        },
+        "update": {
+            "title": "Modifier {{product}}",
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{product}}",
+            "text": "Voulez-vous supprimer {{product}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
+        }
+    },
+    "categories": {
+        "title": "Catégories",
+        "fields": {
+            "name": "Nom"
+        },
+        "create": {
+            "title": "Ajouter une catégorie",
+            "add": "Ajouter"
+        },
+        "update": {
+            "title": "Modifier {{category}}",
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{category}}",
+            "text": "Voulez-vous supprimer {{category}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
+        }
+    },
+    "notFound": {
+        "pageNotExist": "Cette page n'existe pas",
+        "goBack": "Retourner à l'accueil"
+    }
+}

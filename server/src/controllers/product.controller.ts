@@ -13,6 +13,7 @@ export class ProductController {
             let products = null;
             if (category) products = await productService.getAll({ category }).populate('category');
             else products = await productService.getAll().populate('category');
+            res.status(200).json(products);
         } catch (error) {
             res.status(500).json(error);
         }
