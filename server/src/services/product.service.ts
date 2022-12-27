@@ -26,4 +26,9 @@ export class ProductService {
         const product = ProductModel.findOneAndDelete(filters);
         return product;
     }
+
+    deleteAll(filters: Object) {
+        const products = ProductModel.deleteMany(filters);
+        return products;
+    }
 };

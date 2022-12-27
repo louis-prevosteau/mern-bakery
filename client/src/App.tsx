@@ -10,7 +10,6 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Product from './pages/Product';
 import Products from './pages/Products';
-import Profile from './pages/Profile';
 import './utils/i18n';
 
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
           <Route caseSensitive path='/products' element={<Products/>}/>
           <Route caseSensitive path='/categories' element={<Categories/>}/>
           <Route caseSensitive path='/products/:id' element={<Product/>}/>
-          <Route caseSensitive path='/profile' element={<Profile/>}/>
           <Route caseSensitive path='/addresses' element={<Addresses/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>

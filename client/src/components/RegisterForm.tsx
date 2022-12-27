@@ -2,6 +2,7 @@ import { Box, Button, Grid, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { register } from '../redux/actions';
 
 const RegisterForm = () => {
@@ -15,10 +16,12 @@ const RegisterForm = () => {
     );
     const dispatch = useDispatch<any>();
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const onSubmit = (e: any) => {
         e.preventDefault();
         dispatch(register({ username: state.username, email: state.email, password: state.password }));
+        navigate('/products');
     };
 
     return (

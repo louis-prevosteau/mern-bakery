@@ -1,10 +1,11 @@
+import { Card, Grid } from '@mui/material';
 import React from 'react';
 
 const ProductDetails = () => {
     return (
-        <div>
-            
-        </div>
+        <Grid direction='row'>
+            <Card></Card>
+        </Grid>
     );
 };
 

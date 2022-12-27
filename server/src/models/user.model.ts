@@ -20,15 +20,6 @@ const UserSchema = new Schema(
             type: String,
             enum: [ADMIN, USER],
             default: USER
-        },
-        likes: {
-            type: [
-                {
-                    type: Schema.Types.ObjectId,
-                    ref: 'product'
-                }
-            ],
-            default: []
         }
     },
     {

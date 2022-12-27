@@ -22,7 +22,7 @@ const DeleteCategoryDialog = ({ category }: { category: Category }) => {
 
     const onDelete = (e: any) => {
         e.preventDefault();
-        dispatch(deleteCategory(category._id))
+        dispatch(deleteCategory(category._id));
     };
 
     return (

@@ -71,44 +71,7 @@ export class ProductController {
         const { id } = req.params;
         try {
             const product = await productService.delete({ _id: id });
-            if (product?.image) fs.rm(`../client/public/uploads/products/${product?.image}`, (err) => {return})
             res.status(200).json(product);
-        } catch (error) {
-            res.status(500).json(error);
-        }
-    }
-
-    async like(req: Request, res: Response) {
-        const { id } = req.params;
-        const { like } = req.body;
-        try {
-            const product = await productService.update(
-                { _id: id },
-                { $push: { likes: like } }
-            );
-            userService.update(
-                { _id: like },
-                { $push: { likes: product?._id } }
-            )
-            res.status(200).json(product)
-        } catch (error) {
-            res.status(500).json(error);
-        }
-    }
-
-    async unlike(req: Request, res: Response) {
-        const { id } = req.params;
-        const { like } = req.body;
-        try {
-            const product = await productService.update(
-                { _id: id },
-                { $pull: { likes: like } }
-            );
-            userService.update(
-                { _id: like },
-                { $pull: { likes: product?._id } }
-            )
-            res.status(200).json(product)
         } catch (error) {
             res.status(500).json(error);
         }

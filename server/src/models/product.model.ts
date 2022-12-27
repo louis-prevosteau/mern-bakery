@@ -16,15 +16,6 @@ const ProductSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'category',
             required: true
-        },
-        likes: {
-            type: [
-                {
-                    type: Schema.Types.ObjectId,
-                    ref: 'user'
-                }
-            ],
-            default: []
         }
     }
 );

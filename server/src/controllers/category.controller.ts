@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-import { CategoryService } from "../services";
+import { CategoryService, ProductService } from "../services";
 
 const categoryService = new CategoryService();
+const productService = new ProductService();
 
 export class CategoryController {
 
@@ -41,6 +42,7 @@ export class CategoryController {
         const { id } = req.params;
         try {
             const category = await categoryService.delete({ _id: id });
+            productService.deleteAll({ category: category?._id });
             res.status(200).json(category);
         } catch (error) {
             res.status(500).json(error);

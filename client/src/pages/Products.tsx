@@ -12,7 +12,7 @@ const Products = () => {
         <Container maxWidth='sm'>
             <Typography variant='h4' textAlign={'center'}>{t('products.title')}</Typography>
             <ProductList/>
-            <CreateProductModal/>
+            {localStorage.getItem('profile') && <CreateProductModal/>}
         </Container>
     );
 };
