@@ -23,8 +23,8 @@ export const getProductsByCategory = (category: Category) => async (dispatch: Di
     );
 };
 
-export const getProduct = (product: Product) => async (dispatch: Dispatch) => {
-    const { data } = await api.getProduct(product._id);
+export const getProduct = (id: any) => async (dispatch: Dispatch) => {
+    const { data } = await api.getProduct(id);
     dispatch(
         {
             type: GET_PRODUCT,
@@ -53,8 +53,8 @@ export const updateProduct = (productData: Product) => async (dispatch: Dispatch
     );
 };
 
-export const deleteProduct = (product: Product) => async (dispatch: Dispatch) => {
-    const { data } = await api.deleteProduct(product._id);
+export const deleteProduct = (id: any) => async (dispatch: Dispatch) => {
+    const { data } = await api.deleteProduct(id);
     dispatch(
         {
             type: DELETE_PRODUCT,

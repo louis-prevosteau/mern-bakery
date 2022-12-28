@@ -22,7 +22,7 @@ const ProductList = () => {
 
     useEffect(() => {
         dispatch(getProducts());
-    }, [products]);
+    }, []);
 
     return (
         <div>

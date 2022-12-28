@@ -42,10 +42,10 @@ const UpdateProductModal = ({ product }: { product: Product }) => {
                 <form onSubmit={onSubmit}>
                     <Grid direction={'column'}>
                         <Grid item>
-                            <TextField value={product.name} label={t('products.fields.name')} type='text' onChange={(e) => setState({ ...state, product: { ...state.product, name: e.target.value } })}/>
+                            <TextField value={state.product.name} label={t('products.fields.name')} type='text' onChange={(e) => setState({ ...state, product: { ...state.product, name: e.target.value } })}/>
                         </Grid>
                         <Grid item>
-                            <TextField value={product.price} label={t('products.fields.price')} type='number' inputProps={{ step: 0.01 }} onChange={(e) => setState({ ...state, product: { ...state.product, price: Number(e.target.value) } })}/>
+                            <TextField value={state.product.price} label={t('products.fields.price')} type='number' inputProps={{ step: 0.01 }} onChange={(e) => setState({ ...state, product: { ...state.product, price: Number(e.target.value) } })}/>
                         </Grid>
                         <Grid item>
                             <Select label={t('products.fields.category')} onChange={(e) => setState({ ...state, product: { ...state.product, category: Object(e.target.value) } })}>
@@ -54,7 +54,7 @@ const UpdateProductModal = ({ product }: { product: Product }) => {
                                 ))}
                             </Select>
                         </Grid>
-                        <Button type='submit'>{t('products.create.add')}</Button>
+                        <Button type='submit'>{t('products.update.update')}</Button>
                     </Grid>
                 </form>
             </Dialog>
