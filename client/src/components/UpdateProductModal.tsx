@@ -1,5 +1,5 @@
 import { Edit } from '@mui/icons-material';
-import { Button, Dialog, DialogTitle, Grid, IconButton, MenuItem, Select, TextField } from '@mui/material';
+import { Button, Dialog, DialogTitle, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,7 +29,7 @@ const UpdateProductModal = ({ product }: { product: Product }) => {
 
     const onSubmit = (e: any) => {
         e.preventDefault();
-        dispatch(updateProduct(state.product));
+        dispatch(updateProduct(product._id, state.product));
     };
 
     return (
@@ -48,11 +48,14 @@ const UpdateProductModal = ({ product }: { product: Product }) => {
                             <TextField value={state.product.price} label={t('products.fields.price')} type='number' inputProps={{ step: 0.01 }} onChange={(e) => setState({ ...state, product: { ...state.product, price: Number(e.target.value) } })}/>
                         </Grid>
                         <Grid item>
-                            <Select label={t('products.fields.category')} onChange={(e) => setState({ ...state, product: { ...state.product, category: Object(e.target.value) } })}>
-                                {categories.map((category) => (
-                                    <MenuItem key={category._id} value={category._id}>{category.name}</MenuItem>
-                                ))}
-                            </Select>
+                            <FormControl fullWidth>
+                                <InputLabel>{t('products.fields.category')}</InputLabel>
+                                <Select value={state.product.category?.name} label={t('products.fields.category')} onChange={(e) => setState({ ...state, product: { ...state.product, category: Object(e.target.value) } })}>
+                                    {categories.map((category) => (
+                                        <MenuItem key={category._id} value={category._id}>{category.name}</MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                         </Grid>
                         <Button type='submit'>{t('products.update.update')}</Button>
                     </Grid>

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../redux/actions';
+import { PAGES } from '../utils/pages';
 
 const Header = () => {
 
@@ -17,16 +18,6 @@ const Header = () => {
     const dispatch = useDispatch<any>();
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const PAGES = [
-        {
-            path: '/products',
-            name: 'main.menu.products'
-        },
-        {
-            path: '/addresses',
-            name: 'main.menu.addresses'
-        }
-    ];
 
     const onLogout = () => {
         dispatch(logout());

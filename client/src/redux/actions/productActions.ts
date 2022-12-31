@@ -43,8 +43,8 @@ export const createProduct = (productData: Product) => async (dispatch: Dispatch
     );
 };
 
-export const updateProduct = (productData: Product) => async (dispatch: Dispatch) => {
-    const { data } = await api.updateProduct(productData._id, productData);
+export const updateProduct = (id: any, productData: Product) => async (dispatch: Dispatch) => {
+    const { data } = await api.updateProduct(id, productData);
     dispatch(
         {
             type: UPDATE_PRODUCT,

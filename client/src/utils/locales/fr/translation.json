@@ -16,13 +16,6 @@
     },
     "products": {
         "title": "Nos Produits",
-        "subtitles": {
-            "bread": "Nos pains",
-            "pastries": "Nos viennoiseries",
-            "cake": "Nos pâtisseries",
-            "pizza": "Nos pizzas",
-            "sandwich": "Nos Sandwichs"
-        },
         "fields": {
             "name": "Nom",
             "image": "Image",
@@ -61,6 +54,38 @@
         "delete": {
             "title": "Supprimer {{category}}",
             "text": "Voulez-vous supprimer {{category}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
+        }
+    },
+    "bakeries": {
+        "title": "Nos Adresses",
+        "columns": {
+            "address": "Adresse",
+            "city": "Ville",
+            "country": "Pays",
+            "phone": "Téléphone",
+            "infos": "Informations"
+        },
+        "fields": {
+            "address": "Adresse",
+            "city": "Ville",
+            "zipcode": "Code postal",
+            "country": "Pays",
+            "phone": "Téléphone",
+            "infos": "Informations"
+        },
+        "create": {
+            "title": "Ajouter une adresse",
+            "add": "Ajouter"
+        },
+        "update": {
+            "title": "Modifier {{bakery}}",
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{bakery}}",
+            "text": "Voulez-vous supprimer {{bakery}} ?",
             "cancel": "Annuler",
             "delete": "Supprimer"
         }

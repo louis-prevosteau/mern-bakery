@@ -10,10 +10,22 @@ const BakerySchema = new Schema(
             type: String,
             required: true
         },
+        zipcode: {
+            type: String,
+            requied: true
+        },
+        country: {
+            type: String,
+            required: true
+        },
         phone: {
             type: String,
             required: true
-        }
+        },
+        infos: {
+            type: String,
+            required: true
+        },
     },
     {
         timestamps: true
