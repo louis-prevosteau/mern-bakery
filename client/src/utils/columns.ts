@@ -14,9 +14,5 @@ export const BAKERY_COLUMNS = [
     {
         id: 'phone',
         label: 'phone',
-    },
-    {
-        id: 'infos',
-        label: 'infos',
     }
 ];

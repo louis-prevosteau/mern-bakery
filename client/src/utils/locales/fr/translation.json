@@ -64,16 +64,14 @@
             "address": "Adresse",
             "city": "Ville",
             "country": "Pays",
-            "phone": "Téléphone",
-            "infos": "Informations"
+            "phone": "Téléphone"
         },
         "fields": {
             "address": "Adresse",
             "city": "Ville",
             "zipcode": "Code postal",
             "country": "Pays",
-            "phone": "Téléphone",
-            "infos": "Informations"
+            "phone": "Téléphone"
         },
         "create": {
             "title": "Ajouter une adresse",

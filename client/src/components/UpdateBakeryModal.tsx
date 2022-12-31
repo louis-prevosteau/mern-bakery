@@ -50,9 +50,6 @@ const UpdateBakeryModal = ({ bakery }: { bakery: Bakery }) => {
                         <Grid item>
                             <TextField label={t('bakeries.fields.phone')} type='text' value={state.bakery.phone} onChange={(e) => setState({ ...state, bakery: { ...state.bakery, phone: e.target.value } })}/>
                         </Grid>
-                        <Grid item>
-                            <TextField label={t('bakeries.fields.infos')} type='text' value={state.bakery.infos} multiline onChange={(e) => setState({ ...state, bakery: { ...state.bakery, infos: e.target.value } })}/>
-                        </Grid>
                         <Button type='submit'>{t('bakeries.update.update')}</Button>
                     </Grid>
                 </form>

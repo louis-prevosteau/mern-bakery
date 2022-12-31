@@ -42,7 +42,6 @@ const BakeryList = () => {
                             <TableCell>{bakery.city} {bakery.zipcode}</TableCell>
                             <TableCell>{bakery.country}</TableCell>
                             <TableCell>{bakery.phone}</TableCell>
-                            <TableCell>{bakery.infos}</TableCell>
                             <TableCell>
                                 <UpdateBakeryModal bakery={bakery}/>
                             </TableCell>

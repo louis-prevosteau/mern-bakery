@@ -5,7 +5,6 @@ export interface Bakery {
     zipcode?: string;
     country?: string;
     phone?: string;
-    infos?: string;
     createdAt?: string;
     updatedAt?: string;
 };

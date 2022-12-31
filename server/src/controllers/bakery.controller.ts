@@ -15,10 +15,10 @@ export class BakeryController {
     }
 
     async createBakery(req: Request, res: Response) {
-        const { address, city, zipcode, country, phone, infos } = req.body;
+        const { address, city, zipcode, country, phone } = req.body;
         try {
-            if (!address || !city || !zipcode || !country || !phone || !infos) return res.status(400).json({ message: 'Veuillez remplir ces champs' });
-            const bakery = await bakeryService.create({ address, city, zipcode, country, phone, infos });
+            if (!address || !city || !zipcode || !country || !phone) return res.status(400).json({ message: 'Veuillez remplir ces champs' });
+            const bakery = await bakeryService.create({ address, city, zipcode, country, phone });
             res.status(201).json(bakery);
         } catch (error) {
             res.status(500).json(error);
@@ -27,9 +27,9 @@ export class BakeryController {
 
     async updateBakery(req: Request, res: Response) {
         const { id } = req.params;
-        const { address, city, zipcode, country, phone, infos } = req.body;
+        const { address, city, zipcode, country, phone } = req.body;
         try {
-            const bakery = await bakeryService.update({ _id: id }, { address, city, zipcode, country, phone, infos });
+            const bakery = await bakeryService.update({ _id: id }, { address, city, zipcode, country, phone });
             res.status(200).json(bakery);
         } catch (error) {
             res.status(500).json(error);

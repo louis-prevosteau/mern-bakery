@@ -21,11 +21,7 @@ const BakerySchema = new Schema(
         phone: {
             type: String,
             required: true
-        },
-        infos: {
-            type: String,
-            required: true
-        },
+        }
     },
     {
         timestamps: true

@@ -15,8 +15,7 @@ const CreateBakeryModal = () => {
                 city: '',
                 zipcode: '',
                 country: '',
-                phone: '',
-                infos: ''
+                phone: ''
             }
         }
     );
@@ -55,9 +54,6 @@ const CreateBakeryModal = () => {
                         </Grid>
                         <Grid item>
                             <TextField label={t('bakeries.fields.phone')} type='text' onChange={(e) => setState({ ...state, bakery: { ...state.bakery, phone: e.target.value } })}/>
-                        </Grid>
-                        <Grid item>
-                            <TextField label={t('bakeries.fields.infos')} type='text'  multiline onChange={(e) => setState({ ...state, bakery: { ...state.bakery, infos: e.target.value } })}/>
                         </Grid>
                         <Button type='submit'>{t('bakeries.create.add')}</Button>
                     </Grid>
