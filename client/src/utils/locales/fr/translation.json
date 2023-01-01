@@ -16,6 +16,7 @@
     },
     "products": {
         "title": "Nos Produits",
+        "byCategory": "Par catégorie",
         "fields": {
             "name": "Nom",
             "image": "Image",
@@ -36,7 +37,8 @@
             "text": "Voulez-vous supprimer {{product}} ?",
             "cancel": "Annuler",
             "delete": "Supprimer"
-        }
+        },
+        "filter": "Filtrer"
     },
     "categories": {
         "title": "Catégories",

@@ -12,7 +12,7 @@ const Bakeries = () => {
         <Container maxWidth='sm'>
             <Typography variant='h4' textAlign={'center'}>{t('bakeries.title')}</Typography>
             <BakeryList/>
-            <CreateBakeryModal/>
+            {localStorage.getItem('profile') && (<CreateBakeryModal/>)}
         </Container>
     );
 };

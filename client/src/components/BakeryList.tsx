@@ -27,12 +27,16 @@ const BakeryList = () => {
                         {BAKERY_COLUMNS.map((column) => (
                             <TableCell key={column.id}>{t(`bakeries.columns.${column.label}`)}</TableCell>
                         ))}
-                        <TableCell>
-                            <Edit/>
-                        </TableCell>
-                        <TableCell>
-                            <Delete/>
-                        </TableCell>
+                        {localStorage.getItem('profile') && (
+                            <div>
+                                <TableCell>
+                                    <Edit/>
+                                </TableCell>
+                                <TableCell>
+                                    <Delete/>
+                                </TableCell>
+                            </div>
+                        )}
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -42,12 +46,16 @@ const BakeryList = () => {
                             <TableCell>{bakery.city} {bakery.zipcode}</TableCell>
                             <TableCell>{bakery.country}</TableCell>
                             <TableCell>{bakery.phone}</TableCell>
-                            <TableCell>
-                                <UpdateBakeryModal bakery={bakery}/>
-                            </TableCell>
-                            <TableCell>
-                                <DeleteBakeryModal bakery={bakery}/>
-                            </TableCell>
+                            {localStorage.getItem('profile') && (
+                                <div>
+                                    <TableCell>
+                                        <UpdateBakeryModal bakery={bakery}/>
+                                    </TableCell>
+                                    <TableCell>
+                                        <DeleteBakeryModal bakery={bakery}/>
+                                    </TableCell>
+                                </div>
+                            )}
                         </TableRow>
                     ))}
                 </TableBody>

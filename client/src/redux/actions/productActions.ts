@@ -14,7 +14,7 @@ export const getProducts = () => async (dispatch: Dispatch) => {
 };
 
 export const getProductsByCategory = (category: Category) => async (dispatch: Dispatch) => {
-    const { data } = await api.getProductsByCategory(category._id);
+    const { data } = await api.getProductsByCategory(category);
     dispatch(
         {
             type: GET_PRODUCTS,
