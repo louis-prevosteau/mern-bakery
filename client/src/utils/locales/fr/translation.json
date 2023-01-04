@@ -3,6 +3,7 @@
         "menu": {
             "products": "Nos Produits",
             "addresses": "Nos Adresses",
+            "schedules": "Horaires",
             "logout": "Se déconnecter"
         },
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/mern-bakery"
@@ -88,6 +89,20 @@
             "text": "Voulez-vous supprimer {{bakery}} ?",
             "cancel": "Annuler",
             "delete": "Supprimer"
+        }
+    },
+    "schedules": {
+        "title": "Horaires",
+        "fields": {
+            "day": "Jour",
+            "morningOpen": "Ouverture (matin)",
+            "morningClose": "Fermeture (matin)",
+            "afternoonOpen": "Ouverture (après-midi)",
+            "afternoonClose": "Fermeture (après-midi)"
+        },
+        "create": {
+            "title": "Ajouter un horaire",
+            "add": "Ajouter"
         }
     },
     "notFound": {

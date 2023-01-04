@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "../config/default";
-import { Bakery, Category, Product, User, UserLogin, UserRegister } from "../utils/interfaces";
+import { Bakery, Category, Product, Schedule, User, UserLogin, UserRegister } from "../utils/interfaces";
 
 const api = axios.create(
     {
@@ -35,3 +35,8 @@ export const getBakeries = () => api.get('bakery');
 export const createBakery = (data: Bakery) => api.post('bakery', data);
 export const updateBakery = (id: any, data: Bakery) => api.put(`bakery/${id}`, data);
 export const deleteBakery = (id: any) => api.delete(`bakery/${id}`);
+
+export const getSchedules = () => api.get('schedule');
+export const createSchedule = (data: Schedule) => api.post('schedule', data);
+export const updateSchedule = (id: any, data: Schedule) => api.put(`schedule/${id}`, data);
+export const deleteSchedule = (id: any) => api.delete(`schedule/${id}`);

@@ -9,6 +9,7 @@ import Categories from './pages/Categories';
 import NotFound from './pages/NotFound';
 import Product from './pages/Product';
 import Products from './pages/Products';
+import Schedules from './pages/Schedules';
 import './utils/i18n';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route caseSensitive path='/categories' element={<Categories/>}/>
           <Route caseSensitive path='/products/:id' element={<Product/>}/>
           <Route caseSensitive path='/addresses' element={<Bakeries/>}/>
+          <Route caseSensitive path='/schedules' element={<Schedules/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </Paper>

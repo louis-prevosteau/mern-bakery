@@ -6,5 +6,9 @@ export const PAGES = [
     {
         path: '/addresses',
         name: 'main.menu.addresses'
+    },
+    {
+        path: '/schedules',
+        name: 'main.menu.schedules'
     }
 ];

@@ -10,14 +10,14 @@ const Products = () => {
     const { t } = useTranslation();
 
     return (
-        <Grid container direction='row'>
-            <CategoryFilter/>
-            <Container maxWidth='sm'>
+        <Container maxWidth='sm'>
+            <Grid>
                 <Typography variant='h4' textAlign={'center'}>{t('products.title')}</Typography>
+                <CategoryFilter/>
                 <ProductList/>
-                {localStorage.getItem('profile') && <CreateProductModal/>}
-            </Container>
-        </Grid>
+            </Grid>
+            {localStorage.getItem('profile') && <CreateProductModal/>}
+        </Container>
     );
 };
 

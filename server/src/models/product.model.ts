@@ -17,6 +17,9 @@ const ProductSchema = new Schema(
             ref: 'category',
             required: true
         }
+    },
+    {
+        timestamps: true
     }
 );
 
