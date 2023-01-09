@@ -1,4 +1,4 @@
-import { IconButton, Dialog, DialogTitle, TextField, Button, Grid } from '@mui/material';
+import { IconButton, Dialog, DialogTitle, TextField, Button, Grid, DialogContent } from '@mui/material';
 import React, { useState } from 'react';
 import { Category } from '../utils/interfaces';
 import { useDispatch } from 'react-redux';
@@ -33,14 +33,16 @@ const UpdateCategoryModal = ({ category }: { category: Category }) => {
             </IconButton>
             <Dialog open={state.open} onClose={onClose}>
                 <DialogTitle>{t('categories.update.title', { category: category.name })}</DialogTitle>
-                <form onSubmit={onSubmit}>
-                    <Grid direction='column'>
-                        <Grid item>
-                            <TextField label={t('categories.fields.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
+                <DialogContent>
+                    <form onSubmit={onSubmit}>
+                        <Grid direction='column'>
+                            <Grid item>
+                                <TextField label={t('categories.fields.name')} value={state.category.name} onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value }})}/>
+                            </Grid>
+                            <Button type='submit'>{t('categories.update.update')}</Button>
                         </Grid>
-                        <Button type='submit'>{t('categories.update.update')}</Button>
-                    </Grid>
-                </form>
+                    </form>
+                </DialogContent>
             </Dialog>
         </div>
     );

@@ -1,5 +1,5 @@
 import { Edit } from '@mui/icons-material';
-import { Button, Dialog, DialogTitle, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,27 +39,29 @@ const UpdateProductModal = ({ product }: { product: Product }) => {
             </IconButton>
             <Dialog open={state.open} onClose={onClose}>
                 <DialogTitle>{t('products.update.title', { product: product.name })}</DialogTitle>
-                <form onSubmit={onSubmit}>
-                    <Grid direction={'column'}>
-                        <Grid item>
-                            <TextField value={state.product.name} label={t('products.fields.name')} type='text' onChange={(e) => setState({ ...state, product: { ...state.product, name: e.target.value } })}/>
+                <DialogContent>
+                    <form onSubmit={onSubmit}>
+                        <Grid direction={'column'}>
+                            <Grid item>
+                                <TextField value={state.product.name} label={t('products.fields.name')} type='text' onChange={(e) => setState({ ...state, product: { ...state.product, name: e.target.value } })}/>
+                            </Grid>
+                            <Grid item>
+                                <TextField value={state.product.price} label={t('products.fields.price')} type='number' inputProps={{ step: 0.01 }} onChange={(e) => setState({ ...state, product: { ...state.product, price: Number(e.target.value) } })}/>
+                            </Grid>
+                            <Grid item>
+                                <FormControl fullWidth>
+                                    <InputLabel>{t('products.fields.category')}</InputLabel>
+                                    <Select value={state.product.category?.name} label={t('products.fields.category')} onChange={(e) => setState({ ...state, product: { ...state.product, category: Object(e.target.value) } })}>
+                                        {categories.map((category) => (
+                                            <MenuItem key={category._id} value={category._id}>{category.name}</MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                            <Button type='submit'>{t('products.update.update')}</Button>
                         </Grid>
-                        <Grid item>
-                            <TextField value={state.product.price} label={t('products.fields.price')} type='number' inputProps={{ step: 0.01 }} onChange={(e) => setState({ ...state, product: { ...state.product, price: Number(e.target.value) } })}/>
-                        </Grid>
-                        <Grid item>
-                            <FormControl fullWidth>
-                                <InputLabel>{t('products.fields.category')}</InputLabel>
-                                <Select value={state.product.category?.name} label={t('products.fields.category')} onChange={(e) => setState({ ...state, product: { ...state.product, category: Object(e.target.value) } })}>
-                                    {categories.map((category) => (
-                                        <MenuItem key={category._id} value={category._id}>{category.name}</MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                        <Button type='submit'>{t('products.update.update')}</Button>
-                    </Grid>
-                </form>
+                    </form>
+                </DialogContent>
             </Dialog>
         </div>
     );

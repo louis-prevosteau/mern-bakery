@@ -12,7 +12,7 @@ const Schedules = () => {
         <Container maxWidth='sm'>
             <Typography variant='h4' textAlign='center'>{t('schedules.title')}</Typography>
             <ScheduleList/>
-            {localStorage.getItem('profile') && (<CreateScheduleModal/>)}
+            {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (<CreateScheduleModal/>)}
         </Container>
     );
 };

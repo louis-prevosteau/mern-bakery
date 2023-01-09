@@ -27,7 +27,7 @@ const BakeryList = () => {
                         {BAKERY_COLUMNS.map((column) => (
                             <TableCell key={column.id}>{t(`bakeries.columns.${column.label}`)}</TableCell>
                         ))}
-                        {localStorage.getItem('profile') && (
+                        {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (
                             <div>
                                 <TableCell>
                                     <Edit/>
@@ -46,7 +46,7 @@ const BakeryList = () => {
                             <TableCell>{bakery.city} {bakery.zipcode}</TableCell>
                             <TableCell>{bakery.country}</TableCell>
                             <TableCell>{bakery.phone}</TableCell>
-                            {localStorage.getItem('profile') && (
+                            {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (
                                 <div>
                                     <TableCell>
                                         <UpdateBakeryModal bakery={bakery}/>

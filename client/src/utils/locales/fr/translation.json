@@ -103,6 +103,16 @@
         "create": {
             "title": "Ajouter un horaire",
             "add": "Ajouter"
+        },
+        "update": {
+            "title": "Modifier {{schedule}}",
+            "update": "Modifier"
+        },
+        "delete": {
+            "title": "Supprimer {{schedule}}",
+            "text": "Voulez-vous supprimer {{schedule}} ?",
+            "cancel": "Annuler",
+            "delete": "Supprimer"
         }
     },
     "notFound": {

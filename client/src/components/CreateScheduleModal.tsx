@@ -1,5 +1,5 @@
 import { Add } from '@mui/icons-material';
-import { Button, Dialog, DialogTitle, Grid, IconButton, TextField } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle, Grid, IconButton, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -38,26 +38,28 @@ const CreateScheduleModal = () => {
             </IconButton>
             <Dialog open={state.open} onClose={onClose}>
                 <DialogTitle>{t('schedules.create.title')}</DialogTitle>
-                <form onSubmit={onSubmit}>
-                    <Grid direction={'column'}>
-                        <Grid item>
-                            <TextField label={t('schedules.fields.day')} type='text' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, day: e.target.value } })}/>
+                <DialogContent>
+                    <form onSubmit={onSubmit}>
+                        <Grid direction={'column'}>
+                            <Grid item>
+                                <TextField label={t('schedules.fields.day')} type='text' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, day: e.target.value } })}/>
+                            </Grid>
+                            <Grid item>
+                                <TextField fullWidth label={t('schedules.fields.morningOpen')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, morningOpen: e.target.value } })}/>
+                            </Grid>
+                            <Grid item>
+                                <TextField fullWidth label={t('schedules.fields.morningClose')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, morningClose: e.target.value } })}/>
+                            </Grid>
+                            <Grid item>
+                                <TextField fullWidth label={t('schedules.fields.afternoonOpen')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, afternoonOpen: e.target.value } })}/>
+                            </Grid>
+                            <Grid item>
+                                <TextField fullWidth label={t('schedules.fields.afternoonClose')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, afternoonClose: e.target.value} })}/>
+                            </Grid>
                         </Grid>
-                        <Grid item>
-                            <TextField fullWidth label={t('schedules.fields.morningOpen')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, morningOpen: e.target.value } })}/>
-                        </Grid>
-                        <Grid item>
-                            <TextField fullWidth label={t('schedules.fields.morningClose')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, morningClose: e.target.value } })}/>
-                        </Grid>
-                        <Grid item>
-                            <TextField fullWidth label={t('schedules.fields.afternoonOpen')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, afternoonOpen: e.target.value } })}/>
-                        </Grid>
-                        <Grid item>
-                            <TextField fullWidth label={t('schedules.fields.afternoonClose')} type='time' onChange={(e) => setState({ ...state, schedule: { ...state.schedule, afternoonClose: e.target.value} })}/>
-                        </Grid>
-                    </Grid>
-                    <Button type='submit'>{t('schedules.create.add')}</Button>
-                </form>
+                        <Button type='submit'>{t('schedules.create.add')}</Button>
+                    </form>
+                </DialogContent>
             </Dialog>
         </div>
     );

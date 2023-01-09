@@ -12,7 +12,7 @@ const Bakeries = () => {
         <Container maxWidth='sm'>
             <Typography variant='h4' textAlign={'center'}>{t('bakeries.title')}</Typography>
             <BakeryList/>
-            {localStorage.getItem('profile') && (<CreateBakeryModal/>)}
+            {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (<CreateBakeryModal/>)}
         </Container>
     );
 };

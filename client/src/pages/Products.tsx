@@ -16,7 +16,7 @@ const Products = () => {
                 <CategoryFilter/>
                 <ProductList/>
             </Grid>
-            {localStorage.getItem('profile') && <CreateProductModal/>}
+            {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && <CreateProductModal/>}
         </Container>
     );
 };

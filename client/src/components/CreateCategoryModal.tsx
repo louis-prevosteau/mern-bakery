@@ -1,5 +1,5 @@
 import { Add } from '@mui/icons-material';
-import { Button, Dialog, DialogTitle, Grid, IconButton, TextField } from '@mui/material';
+import { Button, Dialog, DialogContent, DialogTitle, Grid, IconButton, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -34,14 +34,16 @@ const CreateCategoryModal = () => {
             </IconButton>
             <Dialog open={state.open} onClose={onClose}>
                 <DialogTitle>{t('categories.create.title')}</DialogTitle>
-                <form onSubmit={onSubmit}>
-                    <Grid direction={'column'}>
-                        <Grid item>
-                            <TextField label={t('categories.fields.name')} type='text' onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value } })}/>
+                <DialogContent>
+                    <form onSubmit={onSubmit}>
+                        <Grid direction={'column'}>
+                            <Grid item>
+                                <TextField label={t('categories.fields.name')} type='text' onChange={(e) => setState({ ...state, category: { ...state.category, name: e.target.value } })}/>
+                            </Grid>
+                            <Button type='submit'>{t('categories.create.add')}</Button>
                         </Grid>
-                        <Button type='submit'>{t('categories.create.add')}</Button>
-                    </Grid>
-                </form>
+                    </form>
+                </DialogContent>
             </Dialog>
         </div>
     );

@@ -19,7 +19,7 @@ const ProductDetails = ({ product }: { product: Product }) => {
                     <Typography>{t('products.price', { price: product.price })}</Typography>
                 </Grid>
             </CardContent>
-            {localStorage.getItem('profile') && (
+            {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (
                 <CardActions>
                     <UpdateProductModal product={product}/>
                     <DeleteProductDialog product={product}/>
