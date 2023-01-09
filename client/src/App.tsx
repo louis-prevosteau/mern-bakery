@@ -11,6 +11,7 @@ import Product from './pages/Product';
 import Products from './pages/Products';
 import Schedules from './pages/Schedules';
 import './utils/i18n';
+import Profile from './pages/Profile';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route caseSensitive path='/products/:id' element={<Product/>}/>
           <Route caseSensitive path='/addresses' element={<Bakeries/>}/>
           <Route caseSensitive path='/schedules' element={<Schedules/>}/>
+          <Route caseSensitive path='/profile' element={<Profile/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </Paper>

@@ -4,6 +4,7 @@
             "products": "Nos Produits",
             "addresses": "Nos Adresses",
             "schedules": "Horaires",
+            "profile": "Mon profil",
             "logout": "Se déconnecter"
         },
         "credit": "Copyright ©{{year}} Tous droits réservés | Louis Prevosteau | code source : https://github.com/louis-prevosteau/mern-bakery"
@@ -113,6 +114,18 @@
             "text": "Voulez-vous supprimer {{schedule}} ?",
             "cancel": "Annuler",
             "delete": "Supprimer"
+        }
+    },
+    "profile": {
+        "title" : "Mon profil",
+        "username" : "Pseudo : {{username}}",
+        "email": "Email : {{email}}",
+        "role": "Rôle : {{role}}",
+        "update": {
+            "title": "Modififier mon profil",
+            "username": "Pseudo",
+            "email": "Email",
+            "update": "Modifier"
         }
     },
     "notFound": {

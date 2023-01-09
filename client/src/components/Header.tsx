@@ -85,6 +85,7 @@ const Header = () => {
                                     <AccountCircle/>
                                 </IconButton>
                                 <Menu id='user-menu' anchorEl={state.menuOpen} keepMounted open={Boolean(state.menuOpen)} onClose={onCloseMenu}>
+                                    <MenuItem onClick={() => navigate('/profile')}>{t('main.menu.profile')}</MenuItem>
                                     <MenuItem onClick={onLogout}>{t('main.menu.logout')}</MenuItem>
                                 </Menu>
                             </div>
