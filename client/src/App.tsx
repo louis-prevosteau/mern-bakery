@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material';
 import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Bakeries from './pages/Bakeries';
@@ -12,6 +12,7 @@ import Products from './pages/Products';
 import Schedules from './pages/Schedules';
 import './utils/i18n';
 import Profile from './pages/Profile';
+import Home from './pages/Home';
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
       <Header/>
       <Paper elevation={5}>
         <Routes>
-          <Route path='/' element={<Navigate to='/products'/>}/>
+          <Route path='/' element={<Home/>}/>
           <Route caseSensitive path='/auth' element={<Authentication/>}/>
           <Route caseSensitive path='/products' element={<Products/>}/>
           <Route caseSensitive path='/categories' element={<Categories/>}/>

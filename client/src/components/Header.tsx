@@ -40,12 +40,12 @@ const Header = () => {
     };
 
     return (
-        <AppBar position='static'>
+        <AppBar position='static' style={{ background: '#292C30' }}>
             <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton onClick={onOpenNavMenu} aria-controls="navbar">
-                            <MenuIcon/>
+                            <MenuIcon color='warning'/>
                         </IconButton>
                         <Menu
                             id="navbar"
@@ -82,7 +82,7 @@ const Header = () => {
                         {localStorage.getItem('profile') && (
                             <div>
                                 <IconButton onClick={onOpenMenu} aria-controls="user-menu">
-                                    <AccountCircle/>
+                                    <AccountCircle color='warning'/>
                                 </IconButton>
                                 <Menu id='user-menu' anchorEl={state.menuOpen} keepMounted open={Boolean(state.menuOpen)} onClose={onCloseMenu}>
                                     <MenuItem onClick={() => navigate('/profile')}>{t('main.menu.profile')}</MenuItem>
