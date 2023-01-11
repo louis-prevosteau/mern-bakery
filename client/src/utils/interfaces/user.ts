@@ -5,6 +5,7 @@ export interface User {
     username?: string;
     email?: string;
     role?: string;
+    likes?: Product[];
     createdAt?: string;
     updatedAt?: string;
 };

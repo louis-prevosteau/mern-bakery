@@ -62,3 +62,23 @@ export const deleteProduct = (id: any) => async (dispatch: Dispatch) => {
         }
     );
 };
+
+export const likeProduct = (id: any) => async (dispatch: Dispatch) => {
+    const { data } = await api.likeProduct(id);
+    dispatch(
+        {
+            type: UPDATE_PRODUCT,
+            payload: data
+        }
+    );
+};
+
+export const unlikeProduct = (id: any) => async (dispatch: Dispatch) => {
+    const { data } = await api.unlikeProduct(id);
+    dispatch(
+        {
+            type: UPDATE_PRODUCT,
+            payload: data
+        }
+    );
+};

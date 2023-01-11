@@ -4,6 +4,7 @@ import { Product } from '../utils/interfaces';
 import UpdateProductModal from '../components/UpdateProductModal';
 import DeleteProductDialog from './DeleteProductDialog';
 import { useTranslation } from 'react-i18next';
+import LikeButton from './LikeButton';
 
 const ProductDetails = ({ product }: { product: Product }) => {
 
@@ -21,6 +22,9 @@ const ProductDetails = ({ product }: { product: Product }) => {
             </CardContent>
             {JSON.parse(localStorage.getItem('profile') as string)?.user?.role === 'ADMIN' && (
                 <CardActions>
+                    {JSON.parse(localStorage.getItem('profile') as string)?.user && (
+                        <LikeButton product={product}/>
+                    )}
                     <UpdateProductModal product={product}/>
                     <DeleteProductDialog product={product}/>
                 </CardActions>

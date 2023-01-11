@@ -7,6 +7,7 @@ export interface Product {
     image?: any;
     price?: number;
     category?: Category;
+    likes?: User[];
     createdAt?: string;
     updatedAt?: string;
 };

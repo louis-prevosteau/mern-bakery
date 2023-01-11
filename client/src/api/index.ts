@@ -27,6 +27,8 @@ export const getProduct = (id: any) => api.get(`product/${id}`);
 export const createProduct = (data: Product) => api.post('product', data);
 export const updateProduct = (id: any, data: Product) => api.put(`product/${id}`, data);
 export const deleteProduct = (id: any) => api.delete(`product/${id}`);
+export const likeProduct = (id: any) => api.put(`product/${id}/like`);
+export const unlikeProduct = (id: any) => api.put(`product/${id}/unlike`);
 
 export const getProfile = () => api.get('user/profile');
 export const updateProfile = (data: User) => api.put('user/profile', data);

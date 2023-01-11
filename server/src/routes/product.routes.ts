@@ -12,5 +12,7 @@ router.post('/', jwtAuth, checkRole([ADMIN]), controller.createProduct);
 router.get('/:id', controller.getProduct);
 router.put('/:id', jwtAuth, checkRole([ADMIN]), controller.updateProduct);
 router.delete('/:id', jwtAuth, checkRole([ADMIN]), controller.deleteProduct);
+router.put('/:id/like', jwtAuth, controller.likeProduct);
+router.put('/:id/unlike', jwtAuth, controller.unlikeProduct);
 
 export default router;
