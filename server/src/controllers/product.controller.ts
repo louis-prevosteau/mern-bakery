@@ -76,4 +76,38 @@ export class ProductController {
             res.status(500).json(error);
         }
     }
+
+    async likeProduct(req: any, res: Response) {
+        const { id } = req.params;
+        try {
+            const product = await productService.update(
+                { _id: id },
+                { $push:  { likes: req.user._id }}
+            );
+            userService.update(
+                { _id: req.user._id },
+                { $push:  { likes: id }}
+            );
+            res.status(200).json(product);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    }
+
+    async unlikeProduct(req: any, res: Response) {
+        const { id } = req.params;
+        try {
+            const product = await productService.update(
+                { _id: id },
+                { $pull:  { likes: req.user._id }}
+            );
+            userService.update(
+                { _id: req.user._id },
+                { $pull:  { likes: id }}
+            );
+            res.status(200).json(product);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    }
 };
