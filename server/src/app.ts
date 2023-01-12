@@ -31,14 +31,7 @@ export default class App {
     }
 
     private initMiddlewares(): void {
-        this.app.use(cors(
-            {
-                origin: [
-                    'http://localhost:3000',
-                    'https://french-bakery.onrender.com'
-                ]
-            }
-        ));
+        this.app.use(cors());
         this.app.use(cookieParser());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
