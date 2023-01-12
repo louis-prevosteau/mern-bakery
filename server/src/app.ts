@@ -31,7 +31,7 @@ export default class App {
     }
 
     private initMiddlewares(): void {
-        this.app.use(cors({ origin: true }));
+        this.app.use(cors());
         this.app.use(cookieParser());
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
